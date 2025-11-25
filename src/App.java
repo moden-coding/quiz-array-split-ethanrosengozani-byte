@@ -49,15 +49,26 @@ public class App {
     }
 
     public static int[] copyFrontAndBack(int[] nums){
-
-        return null; //this is a placeholder
-
+            
+        if (nums.length == 1) {
+            return new int[]{nums[0], nums[0]};//this makes it so if it is 1 then we just return a new int of the first value twice 
+        } else {
+            return new int[]{nums[0], nums[nums.length - 1]};//this makes it so we return the first value and then the last value in the list
+        }
     }
 
     public static int maxWordLength(String sentence){
 
+        String[] words = sentence.split(" ");//split every word so we can know how long a word is 
+        int maxLength = 0;//delares the int
 
-        return -1; //this is a placeholder
+        for (String word : words) {//the for each loop
+            if (word.length() > maxLength) {//if the new word is greater then the orginal length then we set the words length to be equal to the max length int and keep on running it in a for each loop
+                maxLength = word.length(); 
+            }
+        }
+
+        return maxLength;//we return the int after the loop is broken 
     }
 
 
